@@ -24,7 +24,7 @@ int main(void)
 						    add_nodeint(&head, 98);
 						        add_nodeint(&head, 402);
 							    add_nodeint(&head, 1024);
-							        print_listint(head);
+							        free_listint(head);
 
 								    if (check_cycle(head) == 0)
 									            printf("Linked list has no cycle\n");
