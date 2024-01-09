@@ -1,5 +1,14 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
+    """Find all multiples of 2 in a list
+
+    Args:
+        my_list: a list
+
+    Returns:
+        a new list with True or False
+    """
+
     new_list = []
     for number in my_list:
         if (number % 2) == 0:
