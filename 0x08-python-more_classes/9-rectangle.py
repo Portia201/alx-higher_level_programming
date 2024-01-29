@@ -52,8 +52,8 @@ class Rectangle():
         return '\n'.join(final)
 
     def __repr__(self):
-        """Returns an “official” string representation of a Rectangle"""
-        return f Rectangle({self.__width}, {self.__height})
+        """Returns an official string representation of a Rectangle"""
+        return 'Rectangle({}, {})'.format(self.__width, self.__height)
 
     def __del__(self):
         """Prints a message when a Rectangle instance is deleted"""
