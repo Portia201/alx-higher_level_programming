@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
-def append_write(filename="", text=""):
-    with open(filename, "a", encoding="UTF-8") as f:
-    
+
+import json
+
+
+def to_json_string(my_obj):
+    return json.dumps(my_obj)
