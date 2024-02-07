@@ -7,7 +7,6 @@ module with class Rectangle
 ===================================
 """
 
-
 class Rectangle(BaseGeometry):
     """Rectangle class that inherits from BaseGeometry"""
 
