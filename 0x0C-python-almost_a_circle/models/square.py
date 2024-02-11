@@ -51,3 +51,16 @@ class Square(Rectangle):
         for index in ["id", "size", "x", "y"]:
             dictionary[index] = getattr(self, index)
         return dictionary
+
+    def save_to_file_csv(squares, filename="squares.csv"):
+        with open(filename, 'w') as file:
+            for square in squares:
+                file.write(f"{square.size}\n")
+
+    def load_from_file_csv(filename="squares.csv"):
+        squares = []
+        with open(filename, 'r') as file:
+            for line in file:
+                size = int(line.strip())
+                squares.append(Square(size))
+        return squares

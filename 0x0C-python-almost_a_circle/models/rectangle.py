@@ -112,3 +112,16 @@ class Rectangle(Base):
         for index in ["id", "width", "height", "x", "y"]:
             dictionary[index] = getattr(self, index)
         return dictionary
+
+    def save_to_file_csv(rectangles, filename="rectangles.csv"):
+        with open(filename, 'w') as file:
+            for rect in rectangles:
+                file.write(f"{rect.width},{rect.height}\n")
+
+    def load_from_file_csv(filename="rectangles.csv"):
+        rectangles = []
+        with open(filename, 'r') as file:
+            for line in file:
+                width, height = map(int, line.strip().split(','))
+                rectangles.append(Rectangle(width, height))
+        return rectangles
