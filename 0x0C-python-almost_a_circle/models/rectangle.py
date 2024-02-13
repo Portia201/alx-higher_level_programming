@@ -51,3 +51,6 @@ class Rectangle(Base):
         if not isinstance(value, (int, float)):
             raise ValueError("y must be a number")
         self.__y = value
+
+     def area(self):
+        return self.width * self.height
