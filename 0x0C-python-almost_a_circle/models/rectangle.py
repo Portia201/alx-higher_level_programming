@@ -58,19 +58,15 @@ class Rectangle(Base):
      def display(self):
         for _ in range(self.height):
             print("#" * self.width)
-     def update(self, *args):
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
+
+    def update(self, *args, **kwargs):
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, value)
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
-
-
